@@ -86,22 +86,23 @@
 
 > NFM中隐层个数不是越多越好，实验证明，一层的效果最好。原因如下：
 
-![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/14.jpg)
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/17.jpg)
 
 #### 预训练对加速模型训练的影响
 
-![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/15.jpg)
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/14.jpg)
+
 
 > 用FM embedding做预训练能够加速训练，但是对于NFM最终效果的影响不大，如下：
 
-![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/16.jpg)
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/15.jpg)
+
 
 **这说明NFM模型的鲁棒性很好, 与wide&deep以及deepCross相比, NFM对参数初始化相对不那么敏感**
 
 ### Performance Comparison
 
-![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/17.jpg)
-
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/16.jpg)
 
 
 ## 代码
