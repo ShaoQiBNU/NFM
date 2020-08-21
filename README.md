@@ -18,17 +18,21 @@
 
 ![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/2.jpg)
 
-> **NFM丢弃了直接把embedding vector拼接输入到神经网络的做法，而是在embedding层后增加了Bi-Interaction操作来对二阶组合特征进行建模。这使得low level的输入表达的信息更加的丰富，极大的提高了后面隐藏层学习高阶非线性组合特征的能力。**其中f(x)是NFM的核心，用来学习二阶组合特征和高阶的组合特征模式。前面两项为线性回归部分，与FM相似。
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/3.jpg)
+
+> **NFM丢弃了直接把embedding vector拼接输入到神经网络的做法，而是在embedding层后增加了Bi-Interaction操作来对二阶组合特征进行建模。这使得low level的输入表达的信息更加的丰富，极大的提高了后面隐藏层学习高阶非线性组合特征的能力。**  其中f(x)是NFM的核心，用来学习二阶组合特征和高阶的组合特征模式。前面两项为线性回归部分，与FM相似。
 
 ### Embedding Layer
 
-![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/3.jpg)
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/4.jpg)
+
 
 > 输入向量x经过embedding层之后, 变成了embedding向量集合，<a href="https://www.codecogs.com/eqnedit.php?latex=\nu&space;_{x}&space;=&space;\{x_{i}v_{i}\},&space;x_{i}\neq&space;0" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\nu&space;_{x}&space;=&space;\{x_{i}v_{i}\},&space;x_{i}\neq&space;0" title="\nu _{x} = \{x_{i}v_{i}\}, x_{i}\neq 0" /></a>。请注意，这里通过输入要素值重新调整了嵌入向量，而不是简单地嵌入表查找。
 
 ### Bi-Interaction Layer
 
-img
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/5.jpg)
+
 
 > 该层定义了一种新的pooling操作: 将embedding向量集合<a href="https://www.codecogs.com/eqnedit.php?latex=\nu&space;_{x}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\nu&space;_{x}" title="\nu _{x}" /></a>转换为单一向量，具体公式如上，其中符号<a href="https://www.codecogs.com/eqnedit.php?latex=\odot" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\odot" title="\odot" /></a>代表两个向量的元素相乘，上述公式的作用是将embedding向量两两元素相乘，之后将所有组合的结果求和。最终结果将是一个k维度向量，k就是embedding向量的长度。
 >
@@ -36,23 +40,23 @@ img
 >
 > 上式可以参考FM算法得到优化，如下：
 
-![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/4.jpg)
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/6.jpg)
 
 
 
 ### Hidden Layer
 
-![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/5.jpg)
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/7.jpg)
 
 
 
 ### Prediction Layer
 
-![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/6.jpg)
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/8.jpg)
 
 ### 对比FM 
 
-![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/7.jpg)
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/9.jpg)
 
 > FM是一种浅层的线性模型，**可以看做是一个神经网络架构，就是去掉隐藏层的NFM**，把去掉隐藏层的NFM称为NFM-0。**这是第一次把FM看做是神经网络来处理，这样的观点对于优化FM提供了一些新的思路。同时，像NN中常用的技巧也可以应用到这里面来，比如Dropout，实验发现在正则化FM的时候，使用Dropout比传统的L2正则化还要有效。**
 
