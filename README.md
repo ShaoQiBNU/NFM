@@ -82,7 +82,12 @@
 
 ### Impact of Hidden Layers
 
+#### 激活函数
 ![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/13.jpg)
+
+#### 隐层层数
+
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/15.jpg)
 
 > NFM中隐层个数不是越多越好，实验证明，一层的效果最好。原因如下：
 
@@ -95,7 +100,7 @@
 
 > 用FM embedding做预训练能够加速训练，但是对于NFM最终效果的影响不大，如下：
 
-![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/15.jpg)
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/18.jpg)
 
 
 **这说明NFM模型的鲁棒性很好, 与wide&deep以及deepCross相比, NFM对参数初始化相对不那么敏感**
