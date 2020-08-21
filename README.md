@@ -68,19 +68,19 @@
 
 #### Dropout和L2正则化对避免模型overfitting的影响
 
-img
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/10.jpg)
 
 > 在Bi-interaction层采用dropout的效果要优于l2正则，一个原因可能是强制L2只会在每次更新中以数字方式抑制参数值，而使用dropout可以看作是ensembling多个子模型，dropout方法不止能够用于nn中,对于带隐因子的线性模型也有很好的抑制过拟合的效果。
 
 #### Batch Normalization对加速模型训练的影响
 
-img
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/11.jpg)
 
 > BN可以加速训练,使得收敛更快, 模型的泛化能力能够提升
 
 ### Impact of Hidden Layers
 
-
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/12.jpg)
 
 > NFM中隐层个数不是越多越好，实验证明，一层的效果最好。原因如下：
 
@@ -88,17 +88,17 @@ img
 
 #### 预训练对加速模型训练的影响
 
-img
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/13.jpg)
 
 > 用FM embedding做预训练能够加速训练，但是对于NFM最终效果的影响不大，如下：
 
-img
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/14.jpg)
 
 **这说明NFM模型的鲁棒性很好, 与wide&deep以及deepCross相比, NFM对参数初始化相对不那么敏感**
 
 ### Performance Comparison
 
-img
+![image](https://github.com/ShaoQiBNU/NFM/blob/master/img/15.jpg)
 
 
 
